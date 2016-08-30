@@ -7,7 +7,7 @@ function($scope){
 }]);
 
 app.controller('project_Catalog',function(){
-  this.product = projects;
+  this.products = projects;
 });
 
 var projects = [
