@@ -24,9 +24,11 @@
 		</section>
 
 		<div ng-controller="project_Catalog as catalog">
-			<h1 ng-repeat="project in catalog.products">
+			<div ng-repeat="project in catalog.products">
+			<h1>
 			{{project.name}}
 			</h1>
+		</div>
 		</div>
 
 		<!-- JavaScript -->
