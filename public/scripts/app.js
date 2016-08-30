@@ -13,10 +13,10 @@ app.controller('project_Catalog',function(){
 var projects = [
   {
     name: "Average Calculator",
-    description: "Calculates the average from a set of grades out of 55."
+    description: "Calculates the average from a set of grades out of 55.",
   },
   {
     name: "Bubble Sorter",
-    description: "Sorts a set of numbers using a bubble sorting algorithm."
+    description: "Sorts a set of numbers using a bubble sorting algorithm.",
   }
-]
+];
