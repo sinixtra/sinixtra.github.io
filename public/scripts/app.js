@@ -6,10 +6,17 @@ function($scope){
   $scope.test = 'Hello world!';
 }]);
 
-app.controller('serice_Catalog',function(){
-  this.product = serice;
+app.controller('project_Catalog',function(){
+  this.product = projects;
 });
 
-var serice = {
-  name: 'Sword Art Online'
-}
+var projects = [
+  {
+    name: "Average Calculator",
+    description: "Calculates the average from a set of grades out of 55."
+  },
+  {
+    name: "Bubble Sorter",
+    description: "Sorts a set of numbers using a bubble sorting algorithm."
+  }
+]
