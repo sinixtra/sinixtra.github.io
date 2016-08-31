@@ -1,10 +1,8 @@
-$(document).ready(function()
-{
 
 	function printToPage (msg)
 	{
 		var message = "<p>" + msg + "<\p>";
-		$("#mainSection").append (message);
+		document.getElementById("sort_Section").innerHTML=message;
 	}
 
 	// defult numbers to sort
@@ -46,5 +44,3 @@ var numberGroup = [33, 28, 19, 4, 56, 8, 3, 12, 13, 44, 56, 9, 42, 7, 17, 31];
 	}
 	bubleSort(numberGroup);
 	printToPage ("Numbers sorted " + numberGroup);
-
-});

@@ -5,35 +5,52 @@
 		<title> bubble sorter </title>
 		<!-- Meta Tags -->
 		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Stylesheets -->
-		<link rel="stylesheets" href="styles/reset.css">
-		<link rel="stylesheet" href="style.css"/>
-
-
-	<body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
 		<header> <!--Header -->
 			<h1 id="mainHeader"> Webslinger Projects </h1>
 		</header>
 		<div>
 			{{test}}
 		</div>
+	<div class="container" ng-controller="project_Catalog as catalog">
+		<div class="span3">
+	  	<div class="well sidebar-nav" >
+	    	<ul class="nav nav-list" >
+  				<li class="nav-header">menu</li>
+	        <li class="active"><a href ng-click="tab = 1">Menu</a></li>
+					<li class="active"><a href ng-click="tab = 2">Average Calculator</a></li>
+					<li class="active"><a href ng-click="tab = 3">Bubble Sorter</a></li>
+	     	</ul>
+	  	</div><!--/.well -->
+		</div><!--/span-->
 
-		<section id="mainSection">
+		<div class="span9">
+			<section id="home_Section" ng-show="tab === 1"></section>
+			<section id="average_Section" ng-show="tab === 2">
+				<form>
+			   <input type=button onclick="myFunction2()" value="Average"/>
+			  </form>
+			<div style="width:350px;">
+			  <div id="box" style="border:1px solid black;width:150px;height:150px;overflow:auto;display:inline-block;">
+			      <p>Your scores!!!</p>
+			  </div>
 
-		</section>
-
-		<div ng-controller="project_Catalog as catalog">
-			<div ng-repeat="project in catalog.products">
-			<h1>
-			{{project.name}}
-			</h1>
+			  <div id="box1" style="border:1px solid black;width:150px;height:150px;overflow:auto;float:right;display: inline-block;">
+			    <p>Your average out of 55!!!</p>
+			  </div>
 			</div>
-		</div>
+			</section>
+			<section id="sort_Section" ng-show="tab ===3"></section>
+		</div><!--/span 9-->
+	</div><!--/container-->
 
 		<!-- JavaScript -->
 		<script
-        	src="https://code.jquery.com/jquery-1.12.3.min.js"
+        	src="https://code.jquery.com/jquery.js"
         	integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
         	crossorigin="anonymous">
     	</script>
@@ -49,6 +66,14 @@
 					type="text/javascript"
 					src="public/scripts/blbl_Sort.js">
 			</script>
+			<script
+					src="bootstrap/js/bootstrap.min.js">
+			</script>
+			<script
+					type="text/javascript"
+				 	src="public/scripts/average calculator.js">
+			</script>
 	</body>
 
 </html>
+<!--ng-repeat="project in catalog.products"-->
