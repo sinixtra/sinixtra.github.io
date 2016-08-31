@@ -16,21 +16,24 @@
 		<div>
 			{{test}}
 		</div>
-	<div class="container" ng-controller="project_Catalog as catalog">
+	<div class="container" ng-controller="menuController as menu">
 		<div class="span3">
-	  	<div class="well sidebar-nav" >
+	  	<div class="well sidebar-nav">
 	    	<ul class="nav nav-list" >
   				<li class="nav-header">menu</li>
-	        <li class="active"><a href ng-click="tab = 1">Menu</a></li>
-					<li class="active"><a href ng-click="tab = 2">Average Calculator</a></li>
-					<li class="active"><a href ng-click="tab = 3">Bubble Sorter</a></li>
+	        <li ng-class="{ active: menu.isSelected(1) }"><a href ng-click="menu.selectTab(1)">Home</a></li>
+					<li ng-class="{ active: menu.isSelected(2) }"><a href ng-click="menu.selectTab(2)">Average Calculator</a></li>
+					<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Bubble Sorter</a></li>
 	     	</ul>
 	  	</div><!--/.well -->
 		</div><!--/span-->
 
 		<div class="span9">
-			<section id="home_Section" ng-show="tab === 1"></section>
-			<section id="average_Section" ng-show="tab === 2">
+			<section id="home_Section" ng-show="menu.isSelected(1)">
+				<h1> Welcome WebSlingers!!!</h1>
+				<p>This site is made to post a few small projects for my Webslinget page.</p>
+			</section>
+			<section id="average_Section" ng-show="menu.isSelected(2)">
 				<form>
 			   <input type=button onclick="myFunction2()" value="Average"/>
 			  </form>
@@ -44,7 +47,7 @@
 			  </div>
 			</div>
 			</section>
-			<section id="sort_Section" ng-show="tab ===3"></section>
+			<section id="sort_Section" ng-show="menu.isSelected(3)"></section>
 		</div><!--/span 9-->
 	</div><!--/container-->
 

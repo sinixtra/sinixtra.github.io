@@ -10,6 +10,17 @@ app.controller('project_Catalog',function(){
   this.products = projects;
 });
 
+app.controller("menuController", function(){
+  this.tab = 1;
+
+  this.selectTab = function(setTab) {
+    this.tab = setTab;
+  };
+  this.isSelected = function(checkTab) {
+    return this.tab === checkTab;
+  };
+});
+
 var projects = [
   {
     name: "home",
