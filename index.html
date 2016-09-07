@@ -6,9 +6,13 @@
 		<!-- Meta Tags -->
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+		<!--scripts-->
+		<script
+			type="text/javascript"
+			src="node_modules/angular/angular.js">
+		</script>
 		<!-- Stylesheets -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
 		<header> <!--Header -->
 			<h1 id="mainHeader"> Webslinger Projects </h1>
@@ -18,6 +22,7 @@
 		</div>
 	<div class="container" ng-controller="menuController as menu">
 		<div class="span3">
+<<<<<<< HEAD
 	  	<div class="well sidebar-nav">
 	    	<ul class="nav nav-list" >
   				<li class="nav-header">menu</li>
@@ -26,6 +31,16 @@
 					<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Number Sorter</a></li>
 	     	</ul>
 	  	</div><!--/.well -->
+=======
+	  		<div class="well sidebar-nav">
+	    			<ul class="nav nav-list" >
+  					<li class="nav-header">menu</li>
+	        			<li ng-class="{ active: menu.isSelected(1) }"><a href ng-click="menu.selectTab(1)">Home</a></li>
+					<li ng-class="{ active: menu.isSelected(2) }"><a href ng-click="menu.selectTab(2)">Average Calculator</a></li>
+					<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Bubble Sorter</a></li>
+	     			</ul>
+	  		</div><!--/.well -->
+>>>>>>> origin/master
 		</div><!--/span-->
 
 		<div class="span9">
@@ -63,6 +78,7 @@
 
 		<!-- JavaScript -->
 		<script
+<<<<<<< HEAD
         	src="https://code.jquery.com/jquery.js"
         	integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
         	crossorigin="anonymous">
@@ -94,6 +110,27 @@
 					type="text/javascript"
 				 	src="public/scripts/quick.js">
 			</script>
+=======
+        		src="https://code.jquery.com/jquery.js"
+        		integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
+        		crossorigin="anonymous">
+    		</script>
+		<script
+			type="text/javascript"
+			src="public/scripts/app.js">
+		</script>
+    		<script
+			type="text/javascript"
+			src="public/scripts/blbl_Sort.js">
+		</script>
+		<script
+			src="bootstrap/js/bootstrap.min.js">
+		</script>
+		<script
+			type="text/javascript"
+		 	src="public/scripts/average calculator.js">
+		</script>
+>>>>>>> origin/master
 	</body>
 
 </html>
