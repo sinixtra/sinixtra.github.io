@@ -40,7 +40,7 @@ var numberGroup = [33, 28, 19, 4, 56, 8, 3, 12, 13, 44, 56, 9, 42, 7, 17, 31];
 
 		} while(sorted);
 
-
+	printToPage ("Numbers sorted " + newArray);
 	}
 	bubleSort(numberGroup);
 	printToPage ("Numbers sorted " + numberGroup);
