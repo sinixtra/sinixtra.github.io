@@ -1,95 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<title> bubble sorter </title>
-		<!-- Meta Tags -->
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--scripts-->
-		<script
-			type="text/javascript"
-			src="node_modules/angular/angular.js">
-		</script>
-		<!-- Stylesheets -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
-		<header> <!--Header -->
+<head>
+	<title> bubble sorter </title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--scripts-->
+	<script type="text/javascript" src="node_modules/angular/angular.js">
+	</script>
+	<!-- Stylesheets -->
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+	<body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
+		<header>
+			<!--Header -->
 			<h1 id="mainHeader"> Webslinger Projects </h1>
 		</header>
 		<div>
 			{{test}}
 		</div>
-	<div class="container" ng-controller="menuController as menu">
-		<div class="span3">
-	  	<div class="well sidebar-nav">
-	    	<ul class="nav nav-list" >
-  				<li class="nav-header">menu</li>
-	        <li ng-class="{ active: menu.isSelected(1) }"><a href ng-click="menu.selectTab(1)">Home1</a></li>
-					<li ng-class="{ active: menu.isSelected(2) }"><a href ng-click="menu.selectTab(2)">Average Calculator</a></li>
-					<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Number Sorter</a></li>
-	     	</ul>
-	  	</div><!--/.well -->
-		</div><!--/span-->
-
-		<div class="span9">
-			<section id="home_Section" ng-show="menu.isSelected(1)">
-				<h1> Welcome WebSlingers!!!</h1>
-				<p>This site is made to post a few small projects for my Webslinget page.</p>
-			</section>
-			<section id="average_Section" ng-show="menu.isSelected(2)">
-				<form>
-			   <input type=button onclick="myFunction2()" value="Average"/>
-			  </form>
-			<div style="width:350px;">
-			  <div id="box" style="border:1px solid black;width:150px;height:150px;overflow:auto;display:inline-block;">
-			      <p>Your scores!!!</p>
-			  </div>
-
-			  <div id="box1" style="border:1px solid black;width:150px;height:150px;overflow:auto;float:right;display: inline-block;">
-			    <p>Your average out of 55!!!</p>
-			  </div>
-			</div>
-			</section>
-			<section ng-show="menu.isSelected(3)">
-
-				<div id="form">
-  				<input type="text" id="newItem"><br>
-					<input name="radio1" type="radio" value="option1" id="option1" >Bubble<br>
-					<input name="radio1" type="radio" value="option2" id="option2" >Quick
-  				<input type="button" value="Add" onclick="sorter()"/>
+		<div class="container" ng-controller="menuController as menu">
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header">menu</li>
+						<li ng-class="{ active: menu.isSelected(1) }"><a href ng-click="menu.selectTab(1)">Home1</a></li>
+						<li ng-class="{ active: menu.isSelected(2) }"><a href ng-click="menu.selectTab(2)">Average Calculator</a></li>
+						<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Number Sorter</a></li>
+					</ul>
 				</div>
-				<h1>Your results!</h1>
-				<div id="sort_Section"></div>
-			</section>
-		</div><!--/span 9-->
-	</div><!--/container-->
+				<!--/.well -->
+			</div>
+			<!--/span-->
+
+			<div class="span9">
+				<section id="home_Section" ng-show="menu.isSelected(1)">
+					<h1> Welcome WebSlingers!!!</h1>
+					<p>This site is made to post a few small projects for my Webslinget page.</p>
+				</section>
+				<section id="average_Section" ng-show="menu.isSelected(2)">
+					<form>
+						<input type=button onclick="myFunction2()" value="Average" />
+					</form>
+					<div style="width:350px;">
+						<div id="box" style="border:1px solid black;width:150px;height:150px;overflow:auto;display:inline-block;">
+							<p>Your scores!!!</p>
+						</div>
+
+						<div id="box1" style="border:1px solid black;width:150px;height:150px;overflow:auto;float:right;display: inline-block;">
+							<p>Your average out of 55!!!</p>
+						</div>
+					</div>
+				</section>
+				<section ng-show="menu.isSelected(3)">
+
+					<div id="form">
+						<input type="text" id="newItem"><br>
+						<input name="radio1" type="radio" value="option1" id="option1">Bubble<br>
+						<input name="radio1" type="radio" value="option2" id="option2">Hoare<br>
+						<!--<input name="radio1" type="radio" value="option3" id="option3">Lomuto-->
+						<input type="button" value="Add" onclick="sorter()" />
+					</div>
+					<h1>Your results!</h1>
+					<div id="sort_Section"></div>
+				</section>
+			</div>
+			<!--/span 9-->
+		</div>
+		<!--/container-->
 
 		<!-- JavaScript -->
-			<script
-					type="text/javascript"
-					src="node_modules/angular/angular.js">
-			</script>
-			<script
-					type="text/javascript"
-					src="public/scripts/app.js">
-			</script>
-			<script
-					src="bootstrap/js/bootstrap.min.js">
-			</script>
-			<script
-					type="text/javascript"
-				 	src="public/scripts/average calculator.js">
-			</script>
-			<script
-					type="text/javascript"
-				 	src="public/scripts/sorter.js">
-			</script>
-			<script
-        		src="https://code.jquery.com/jquery.js"
-        		integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="
-        		crossorigin="anonymous">
-    	</script>
+		<script type="text/javascript" src="node_modules/angular/angular.js">
+		</script>
+		<script type="text/javascript" src="public/scripts/app.js">
+		</script>
+		<script src="bootstrap/js/bootstrap.min.js">
+		</script>
+		<script type="text/javascript" src="public/scripts/average calculator.js">
+		</script>
+		<script type="text/javascript" src="public/scripts/sorter.js">
+		</script>
+		<script src="https://code.jquery.com/jquery.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous">
+		</script>
 	</body>
 
 </html>
