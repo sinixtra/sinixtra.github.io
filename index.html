@@ -1,89 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<title> bubble sorter </title>
-	<!-- Meta Tags -->
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--scripts-->
-	<script type="text/javascript" src="node_modules/angular/angular.js">
-	</script>
-	<!-- Stylesheets -->
-	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="src/css/responsive.css" rel="stylesheet" type="text/css">
+</head>
 
-	<body ng-app="weiss_Schwarz_Db" ng-controller="MainCtrl">
-		<header>
-			<!--Header -->
-			<h1 id="mainHeader"> Webslinger Projects </h1>
-		</header>
-		<div>
-			{{test}}
-		</div>
-		<div class="container" ng-controller="menuController as menu">
-			<div class="span3">
-				<div class="well sidebar-nav">
-					<ul class="nav nav-list">
-						<li class="nav-header">menu</li>
-						<li ng-class="{ active: menu.isSelected(1) }"><a href ng-click="menu.selectTab(1)">Home1</a></li>
-						<li ng-class="{ active: menu.isSelected(2) }"><a href ng-click="menu.selectTab(2)">Average Calculator</a></li>
-						<li ng-class="{ active: menu.isSelected(3) }"><a href ng-click="menu.selectTab(3)">Number Sorter</a></li>
-					</ul>
-				</div>
-				<!--/.well -->
-			</div>
-			<!--/span-->
+<body>
 
-			<div class="span9">
-				<section id="home_Section" ng-show="menu.isSelected(1)">
-					<h1> Welcome WebSlingers!!!</h1>
-					<p>This site is made to post a few small projects for my Webslinget page.</p>
-				</section>
-				<section id="average_Section" ng-show="menu.isSelected(2)">
-					<form>
-						<input type=button onclick="myFunction2()" value="Average" />
-					</form>
-					<div style="width:350px;">
-						<div id="box" style="border:1px solid black;width:150px;height:150px;overflow:auto;display:inline-block;">
-							<p>Your scores!!!</p>
-						</div>
+    <!--this contains the top bar with hamburger buttons-->
+    <div class="header">
+        <h1>Damian De Avila</h1>
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+    </div>
 
-						<div id="box1" style="border:1px solid black;width:150px;height:150px;overflow:auto;float:right;display: inline-block;">
-							<p>Your average out of 55!!!</p>
-						</div>
-					</div>
-				</section>
-				<section ng-show="menu.isSelected(3)">
+    <!--contains menu, main contant, and aside -->
+    <div class="row">
+        <!--menu-->
+        <div class="col-3 col-m-3 menu">
+            <ul id="nav">
+                <li id="me" class="active">Bio</li>
+                <li id="pro">Projects</li>
+                <li id="fun">Hobbies</li>
+                <li id="cont">Contact Info</li>
+            </ul>
+        </div>
 
-					<div id="form">
-						<input type="text" id="newItem"><br>
-						<input name="radio1" type="radio" value="option1" id="option1">Bubble<br>
-						<input name="radio1" type="radio" value="option2" id="option2">Hoare<br>
-						<!--<input name="radio1" type="radio" value="option3" id="option3">Lomuto-->
-						<input type="button" value="Add" onclick="sorter()" />
-					</div>
-					<h1>Your results!</h1>
-					<div id="sort_Section"></div>
-				</section>
-			</div>
-			<!--/span 9-->
-		</div>
-		<!--/container-->
+        <!--mian contant-->
+        <div class="col-6 col-m-9 main">
+            <h1>Damian De Avila</h1>
+            <p>Main content.</p>
+        </div>
 
-		<!-- JavaScript -->
-		<script type="text/javascript" src="node_modules/angular/angular.js">
-		</script>
-		<script type="text/javascript" src="public/scripts/app.js">
-		</script>
-		<script src="bootstrap/js/bootstrap.min.js">
-		</script>
-		<script type="text/javascript" src="public/scripts/average calculator.js">
-		</script>
-		<script type="text/javascript" src="public/scripts/sorter.js">
-		</script>
-		<script src="https://code.jquery.com/jquery.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous">
-		</script>
-	</body>
+        <!--asside-->
+        <div class="col-3 col-m-12">
+            <div class="aside">
+                <h2>Home Town</h2>
+                <p>Mexico City</p>
+                <h2>Birth date</h2>
+                <p>June 13 1992</p>
+                <h2>Age</h2>
+                <p>24</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- contains the footer of the site-->
+    <div class="footer">
+        <p>Resize the browser window to see how the content respond to the resizing.</p>
+    </div>
+
+    <!--scripts-->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous">
+    </script>
+    <script src="src/script/scripts.js">
+    </script>
+</body>
 
 </html>
-<!--ng-repeat="project in catalog.products"-->
