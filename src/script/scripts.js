@@ -1,5 +1,6 @@
 $(".cross").hide();
 $(".menu").hide();
+$(".main").css("width", "75%");
 $(document).ready(function() {
     //hamburger button
     $(".hamburger").click(function() {
